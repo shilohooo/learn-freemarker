@@ -8,7 +8,9 @@ import org.junit.Test;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -48,6 +50,7 @@ public class FreemarkerTests {
             dataMap.put("passwordColType", "varchar");
             dataMap.put("passwordColLength", "255");
             dataMap.put("passwordComment", "密码");
+            dataMap.put("columns", this.getColumns());
             // 加载模板文件
             final Template template = configuration.getTemplate("entity.ftl");
             // 生成源代码文件
@@ -56,5 +59,15 @@ public class FreemarkerTests {
         } catch (IOException | TemplateException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private List<String> getColumns() {
+        final List<String> columns = new ArrayList<>();
+        columns.add("id");
+        columns.add("username");
+        columns.add("password");
+        columns.add("gender");
+        columns.add("email");
+        return columns;
     }
 }

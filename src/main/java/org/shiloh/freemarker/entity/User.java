@@ -1,12 +1,12 @@
 package org.shiloh.freemarker.entity;
 
-import lombok.Data;
-
 import javax.persistence.*;
+
+import lombok.Data;
 
 /**
  * @author shiloh
- * @date 2022/07/17 15:46
+ * @date 2022/07/18 09:26
  */
 @Data
 @Table(name = "sys_user")
@@ -23,4 +23,10 @@ public class User {
 
     @Column(name = "password", columnDefinition = "varchar(255) comment '密码'")
     private String password;
+
+        // id
+        // username
+        // password
+        // gender
+        // email
 }

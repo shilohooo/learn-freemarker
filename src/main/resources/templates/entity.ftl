@@ -25,4 +25,8 @@ public class ${className} {
 
     @Column(name = "${password}", columnDefinition = "${passwordColType}(${passwordColLength}) comment '${passwordComment}'")
     private String ${password};
+
+    <#list columns as column>
+    // ${column}
+    </#list>
 }
